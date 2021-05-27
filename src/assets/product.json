@@ -1,0 +1,7 @@
+[
+    {"pid":101,"name":"Iphone","price":50000,"des":"Good product","qnty":1,"path":"assets/images/iphone.jfif"},
+    {"pid":102,"name":"Redmi","price":22000,"des":"Good product","qnty":1,"path":"assets/images/redmi.jfif"},
+    {"pid":103,"name":"Realme","price":20000,"des":"Good product","qnty":1,"path":"assets/images/realme.jfif"},
+    {"pid":104,"name":"OnePlus","price":30000,"des":"Good product","qnty":1,"path":"assets/images/oneplus.jfif"},
+    {"pid":105,"name":"Samsung","price":80000,"des":"Good product","qnty":1,"path":"assets/images/samsung.jfif"}
+]

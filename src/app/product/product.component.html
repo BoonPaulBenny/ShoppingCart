@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Shopping Cart</a>
+      <a class="log" routerLink="/login"><button class="btn btn-outline-light">Login</button></a>
+    </div>
+  </nav>
+</header>
+
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Description</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of productList" class="align-middle">
+              <td class="text-center">{{data.pid}}</td>
+              <td class="text-center"> {{data.name}}</td>
+              <td class="text-center">
+                <fa-icon [icon]="rupee"></fa-icon> {{data.price}}
+              </td>
+              <td class="text-center">{{data.des}}</td>
+              <td class="text-center">{{data.qnty}}</td>
+              <td class="w-25">
+                <img class="mx-auto d-block" src="{{data.path}}" alt="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

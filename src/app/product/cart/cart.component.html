@@ -1,0 +1,70 @@
+<header>
+  <nav class="navbar  navbar-expand-lg  navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Shopping Cart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/product">Product</a>
+          </li>
+        </ul>
+        <a class="log"><button class="btn btn-outline-light" (click)="logout()">
+          <span class="material-icons">logout</span>&nbsp;
+          Logout</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- <div *ngIf="totalamount > 0"> -->
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 ">
+        <table class="table ">
+          <thead>
+            <tr class="text-center ">
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Sub Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-middle" *ngFor="let item of items">
+              <td class="text-center">
+                <img class="mx-auto d-block" src="{{item.path}}" alt="Image">
+                <h3>{{item.name}}</h3>
+              </td>
+              <td class="text-center">
+                <h3>{{item.price | currency:"INR"}}</h3>
+              </td>
+              <td class="text-center">
+                <h3>{{item.qnty}}</h3>
+              </td>
+              <td class="text-center">
+                <h3>{{item.price * item.qnty | currency:"INR"}}</h3>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <h2 class="total">Total : {{getTotal() | currency:"INR"}} </h2>
+          <br><br>
+          <button id="delete" class="btn btn-danger" (click)="clear()">Remove All</button> <br><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->
+
+
+<div class="empty" *ngIf="totalamount == 0">
+    <h2>Cart is empty </h2>
+</div>  

@@ -1,0 +1,21 @@
+header{ 
+    position: fixed; 
+    width:100%
+}
+
+.navbar{
+    height: 56px;
+}
+
+section{
+    padding-top: 3.5rem;
+}
+
+h5{
+    color: white;
+}
+
+.log{
+    position: absolute;
+    right: 1rem
+}

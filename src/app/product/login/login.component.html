@@ -1,0 +1,43 @@
+<header>
+    <nav class="navbar  navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">Shopping Cart</a>
+        </div>
+    </nav>
+</header>
+
+
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <form #myform="ngForm">
+
+                <div class="form-group ">
+                    <label for="">Username</label>
+                </div>
+                <div>
+                    <input required type="text" [(ngModel)]="newLog.username" #unam="ngModel" class="form-control"
+                        name="uname">
+
+                    <div [hidden]="unam.valid || unam.untouched" class="alert alert-danger">
+                        Uername required
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Password</label>
+                </div>
+                <div>
+                    <input required type="password" class="form-control" #pwd="ngModel" [(ngModel)]="newLog.password"
+                        name="paswd">
+
+                    <div [hidden]="pwd.valid || pwd.untouched" class="alert alert-danger">
+                        Password required
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary float-right" (click)="login()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

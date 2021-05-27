@@ -1,0 +1,69 @@
+<header style="position: fixed; width:100%;">
+  <nav class="navbar  navbar-expand-lg  navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Shopping Cart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/cart">Cart</a>
+          </li>
+        </ul>
+        <a class="log"><button (click)="logout()" class="btn btn-outline-light">
+            <span class="material-icons">logout</span> &nbsp;
+            Logout</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Description</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Cart</th>
+              <th scope="col">Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of productList" class="align-middle">
+              <td class="text-center">{{data.pid}}</td>
+              <td class="text-center"> {{data.name}}</td>
+              <td class="text-center">
+                <fa-icon [icon]="rupee"></fa-icon> {{data.price}}
+              </td>
+              <td class="text-center">{{data.des}}</td>
+              <td class="text-center">
+                <button (click)="add(data)" class="btn btn-outline-primary">+</button> &nbsp; {{data.qnty}} &nbsp;
+                <button (click)="reduce(data)" class="btn btn-outline-primary">-</button> <br> <br>
+              </td>
+              <td class="text-center"><button type="button" (click)="addCart(data)" class="btn btn-primary">Add to
+                  Cart</button></td>
+              <td>
+                <img class="mx-auto d-block" src="{{data.path}}" alt="Image">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

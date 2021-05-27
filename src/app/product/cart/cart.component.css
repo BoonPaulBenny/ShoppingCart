@@ -1,0 +1,23 @@
+header{
+    position: fixed;
+    width:100%;
+}
+
+section{
+    padding-top: 3.7rem;
+}
+
+.total {
+    position: absolute;
+    right: 2rem
+}
+
+#delete{
+    position: absolute;
+    right: 2rem
+}
+
+.empty {
+    padding-top: 5%;
+    padding-left: 45%;
+}

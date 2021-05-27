@@ -1,0 +1,15 @@
+header{
+  position: fixed;
+  width:100%;
+}
+
+section{
+  padding-top: 3.7rem;
+}
+
+img {
+    display: block;
+    height: auto;
+  }
+
+ 
